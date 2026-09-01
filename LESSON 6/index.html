@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Doctor Appointment</title>
+</head>
+<body>
+  <h2>My Doctor Appointment Form</h2>
+ <fieldset>
+    <legend>Personal Information</legend>
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" min="1" max="120" required><br><br>
+ </fieldset><br>
+    <fieldset>
+      <legend>Gender</legend>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br>
+
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+    </fieldset><br>
+
+ <fieldset> 
+    <label for="doctor">Doctor:</label><br>
+    <select id="doctor" name="doctor" required>
+      <option value="">Choose a doctor</option>
+      <option value="dr-Garv">Dr. Garv</option>
+      <option value="dr-Reyan">Dr. Reyan</option>
+      <option value="dr-kavish">Dr. kavish</option>
+    </select><br><br>
+
+    <label for="date">Appointment Date:</label><br>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <label for="time">Appointment Time:</label><br>
+    <input type="time" id="time" name="time" required><br><br>
+ </fieldset>
+
+    <fieldset>
+      <legend>Visit Type</legend>
+      <input type="radio" id="checkup" name="visitType" value="checkup">
+      <label for="checkup">Check-up</label><br>
+
+      <input type="radio" id="consultation" name="visitType" value="consultation">
+      <label for="consultation">Consultation</label><br>
+
+      <input type="radio" id="followup" name="visitType" value="followup">
+      <label for="followup">Follow-up</label>
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Insurance Information</legend>
+      <label for="insurance">Insurance Provider:</label><br>
+      <input type="text" id="insurance" name="insurance" placeholder="Enter insurance provider"><br><br>
+
+      <label for="policy">Policy Number:</label><br>
+      <input type="text" id="policy" name="policy" placeholder="Enter policy number"><br><br>
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Reason for Visit</legend>
+      <label for="reason">Reason for Visit:</label><br>
+      <textarea id="reason" name="reason" rows="4" cols="30" placeholder="Describe your problem" required></textarea><br><br>
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Phone Number</legend>
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required><br><br>
+    </fieldset>
+
+    <input type="submit" value="Book Appointment">
+  </form>
+</body>
+</html>
