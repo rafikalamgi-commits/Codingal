@@ -1,0 +1,52 @@
+.Title{
+    Text-align: center;
+    padding: 20px;
+    font-size: 36px;
+    Color: Blue;
+    border-radius: 20px;
+    text-shadow: 3px 3px red;
+    font-family: Arial, sans-serif;
+}
+
+.HeroName{
+    font-size: 50px;
+    font-weight: bold;
+    Color:yellow;
+    Text-shadow: 3px 3px red;
+}
+
+p{
+    font-size: 20px;
+    Color: red;
+}
+
+.label{
+    text-transform: uppercase;
+    color: green;
+    text-decoration:underline,line-through;
+}
+
+.power{
+    font-weight: Bold;
+    color: aqua;
+}
+
+body{
+    background: linear-gradient(to right, rgb(12, 13, 15), rgb(255, 255, 255));
+}
+
+.weakness{
+    color: blue;
+}
+
+.badge{
+    display:block;
+    font-weight:bold;
+    color: crimson;
+    transform: rotate(15deg);
+}
+
+.footer-text{
+    color:darkgreen;
+    font-style: italic;
+}
