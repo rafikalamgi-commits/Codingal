@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Menu-card{
+    text-align: center;
+    text-decoration: underline;
+    width: Bold;
+    font-size: 30px;
+}
+
+.tagline{
+    text-align: center;
+    color:aqua;
+    font-size: 20px;
+}
+
+#Menu {
+    text-align: center;
+    font-weight: Bold;
+    color: rgb(128, 10, 10);
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+body{
+    background: linear-gradient(to right, rgb(12, 13, 15), rgb(255, 255, 255));
+}
+
+#img{
+    width: 130px;
+    border-radius: 50px;
+}
+
+/* Container ko flex banayenge taaki saman aur details aamne-saamne (side-by-side) aayein */
+.product-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Image aur arrow ke beech ka gap */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Details box jisme arrow lagega */
+.product-details {
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS ke zariye Left Arrow (Teer) banana */
+.product-details::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    /* Box ke thoda bahar nikalne ke liye */
+    transform: translateY(-50%);
+
+    /* Ye border trick se arrow/triangle banta hai */
+    border-width: 10px 10px 10px 0;
+    border-style: solid;
+    border-color: transparent #f1f1f1 transparent transparent;
+}
+
+/* Name aur Price ki styling */
+.product-name {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e44d26;
+    /* Price ka rang */
+}
+
+* Container ko flex banayenge taaki saman aur details aamne-saamne (side-by-side) aayein */ .product-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Image aur arrow ke beech ka gap */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Details box jisme arrow lagega */
+.product-details {
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS ke zariye Left Arrow (Teer) banana */
+.product-details::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    /* Box ke thoda bahar nikalne ke liye */
+    transform: translateY(-50%);
+
+    /* Ye border trick se arrow/triangle banta hai */
+    border-width: 10px 10px 10px 0;
+    border-style: solid;
+    border-color: transparent #f1f1f1 transparent transparent;
+}
+
+/* Name aur Price ki styling */
+.product-name {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e44d26;
+    /* Price ka rang */
+}
