@@ -17,6 +17,7 @@ body {
     position: fixed;
     right: 0;
     top: 0;
+    text-align: center;
     
 }
 .top-bar h1,
@@ -28,6 +29,12 @@ main {
     padding: 100px 20px 40px;
 }
 
+img {
+    /* Order: Top Right Bottom Left */
+    margin: 100px 400px 150px 400px;
+    padding: 5px 10px 5px 10px;
+}
+
 .special-note {
     background-color: yellow;
     border: 2px solid orange;
@@ -35,6 +42,7 @@ main {
     margin-bottom: 38px;
     padding: 15px;
     position: relative;
+     border-radius: 20px;
 }
 .special-note h2,
 .special-note p {
@@ -51,6 +59,7 @@ main {
     margin-bottom: 36px;
     padding: 20px;
     position: relative;
+    border-radius: 20px;
 }
 
 .pet-card h2 {
@@ -89,10 +98,11 @@ button {
     cursor: pointer;
     font-size: 16px;
     padding: 10px 20px;
-    trannsition: background-color 0.3s ease;
+    transition: 0.3s ease;
     border-radius: 15px;
 }   
 
 .hover-button:hover {
     background-color: rgb(100, 0, 62);
 }
+
