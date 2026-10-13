@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            position: relative;
+        }
+
+        .safari-slide {
+            height: 200px;
+            text-align: center;
+            padding-top: 75px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .slide-forest {
+            background: darkgreen;
+        }
+
+        .slide-ocean {
+            background: steelblue;
+        }
+
+        .slide-desert {
+            background: sandybrown;
+        }
+
+        .safari-section {
+            padding: 70px 20px;
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#safariNav" data-offset="60">
+    <div id="safariCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#safariCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#safariCarousel" data-slide-to="1"></li>
+            <li data-target="#safariCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="safari-slide slide-forest">Explore the Forest</div>
+            </div>
+            <div class="carousel-item">
+                <div class="safari-slide slide-ocean">Discover the Ocean</div>
+            </div>
+            <div class="carousel-item">
+                <div class="safari-slide slide-desert">Journey into the Desert</div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#safariCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#safariCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <nav id="safariNav" class="navbar navbar-dark bg-dark sticky-top">
+        <span class="navbar-brand mb-0">Safari Explorer</span>
+       <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#forest">Forest</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#ocean">Ocean</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#desert">Desert</a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="navbar-nav flex-row">
+        <li class="nav-item"><a class="nav-link px-3" href="#forest">Forest</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#ocean">Ocean</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#desert">Desert</a></li>
+    </ul>
+    </nav>
+    <div class="container">
+        <div id="forest" class="safari-section">
+            <h2 style="color: blue;">Forest</h2>
+            <p style="color: green;">Wander beneath towering trees, listen to birdsong, and discover the life thriving in
+                the forest.</p>
+        </div>
+        <div id="ocean" class="safari-section">
+            <h2 style="color: purple;">Ocean</h2>
+            <p style="color: rgb(50, 190, 32);">Dive into a world of colorful reefs, amazing sea creatures, and vast blue waters.</p>
+        </div>
+        <div id="desert" class="safari-section">
+            <h2 style="color: red;">Desert</h2>
+            <p style="color: brown;">Travel across golden dunes and see how plants and animals adapt to the harsh desert
+            environment.</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+Travel across golden dunes and see how plants and
