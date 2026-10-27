@@ -1,0 +1,13 @@
+body{
+    background: linear-gradient(to right, rgb(12, 13, 15), rgb(255, 255, 255));
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 36px;
+    color: rgb(122, 25, 25);
+    border-radius: 20px;
+    text-shadow: 3px 3px red;
+    font-family: Arial, sans-serif;
+}
