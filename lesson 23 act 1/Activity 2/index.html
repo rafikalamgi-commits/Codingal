@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods in Arrays</title>
+</head>
+<body>
+    <h2>Methods in Arrays</h2>
+    <h2>join() pop()</h2>
+    <p>1. .join()- it joins all elements in the array into a string with a separator passed within the parentheses.<br>
+    2. .pop()- it removes the last element from an array and returns that element. This method changes the length of the array.
+</p>
+
+<p id="myjoin"></p>
+<p id="myfirstpop"></p>
+<p id="mysecondpop"></p>
+
+<script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("myjoin").innerHTML = fruits.join(" - ");
+    document.getElementById("myfirstpop").innerHTML = fruits.pop();
+    document.getElementById("mysecondpop").innerHTML = fruits.pop();
+    
+</script>
+</body>
+</body>
+</html>
