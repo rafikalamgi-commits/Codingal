@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Zoo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s ease;
+        }
+
+        h1 {
+            color: rgb(0, 102, 128);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+            color: rgb(201, 21, 21);
+        }
+
+        #zoo {
+            width: 560px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 3px solid #333;
+            border-radius: 12px;
+            background-color: #dff3d8;
+            text-align: center;
+        }
+
+        .zone {
+            width: 75%;
+            height: 80px;
+            margin: 15px;
+            padding: 10px;
+            border: 4px solid #333;
+            border-radius: 8px;
+            background-color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1b1b1b;
+        }
+
+        #total {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1b1b1b;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #0d4d0d;
+            font-weight: bold;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #133e7e;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>My Zoo</h1>
+    <p>Use JS and DOM to add animals to the zoo!</p>
+
+    <div id="zoo">
+        <div id="zone1" class="zone">Lion</div>
+        <div id="zone2" class="zone">Giraffe</div>
+        <div id="zone3" class="zone">Elephant</div>
+
+        <div id="total" class="total">Total animals: 3</div>
+        <div id="status" class="status">Zoo is open! There are 3 animals in the zoo.</div>
+    </div>
+
+    <button id="openZooBtn" type="button">Open the Zoo!</button>
+    
+    <script>
+        const button = document.getElementById('openZooBtn');
+        button.addEventListener('click', () => {
+            const zoo = document.getElementById('zoo');
+            const total = document.getElementById('total');
+            const status = document.getElementById('status');
+            const animal1 = 'Lion';
+            const animal2 = 'Giraffe';
+            const animal3 = 'Elephant';
+            const totalAnimals = 3;
+            const zooColour = 'lightgreen';
+
+            document.getElementById('zone1').innerHTML = animal1;
+            document.getElementById('zone2').innerHTML = animal2;
+            document.getElementById('zone3').innerHTML = animal3;
+
+            document.getElementById('total').innerHTML = 'Total animals: ' + totalAnimals;
+            document.getElementById('zoo').style.backgroundColor = zooColour;
+            document.getElementById('status').innerHTML = document.title + ' is open! There are ' + totalAnimals + ' animals in the zoo.';
+        });
+    </script>
+</body>
+</html>
