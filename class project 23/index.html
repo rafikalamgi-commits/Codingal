@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgba(59, 85, 25, 0.1); font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2>Numbers to 1 to 10</h2>
+        <p id="numbers-list"></p>
+    </div>
+    <div class="random-container" style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2> Random Numbers</h2>
+        <p id="random-numbers-list"></p>
+    </div>
+    <div class="day-display" style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2>Today's Date</h2>
+        <p id="day-display"></p>
+    </div>
+    <script>
+        const numbersList = document.getElementById('numbers-list');
+        let numbers = '';
+        for (let i = 1; i <= 10; i++) {
+            numbers += i + ' ';
+        }
+        numbersList.textContent = numbers.trim();
+
+        const randomNumbersList = document.getElementById('random-numbers-list');
+        let randomNumbers = '';
+        for (let i = 0; i < 10; i++) {
+            randomNumbers += Math.floor(Math.random() * 10) + 1 + ' ';
+        }
+        randomNumbersList.textContent = randomNumbers.trim();
+
+        const dayDisplay = document.getElementById('day-display');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dayDisplay.textContent = today.toLocaleDateString(undefined, options);
+    </script>
+</body>
+</html>
