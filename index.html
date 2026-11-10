@@ -1,16 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Structure of html</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Party Countdown</title>
+  <style>
+    :root {
+      --purple: #8f3a8f;
+      --dark: #111;
+      --panel: #f5f5f5;
+      --border: #d8d8d8;
+      --text: #1d1d1d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f3f3;
+      color: var(--text);
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 30px 40px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: 2.2rem;
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .instructions {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      margin-bottom: 10px;
+    }
+
+    .step-title {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 12px 0 4px;
+    }
+
+    .app {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 720px;
+    }
+
+    .box {
+      min-height: 100px;
+      background: var(--panel);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .box strong {
+      color: var(--purple);
+    }
+
+    button {
+      grid-column: 1 / -1;
+      width: 220px;
+      justify-self: center;
+      padding: 12px 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: var(--purple);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 10px rgba(143, 58, 143, 0.25);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 14px rgba(143, 58, 143, 0.35);
+    }
+
+    @media (max-width: 700px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding: 18px 16px 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!--This is an introduction-->
-    Hi my name is Reyan. I study in Grade6
-    <!--Learning objective-->
-    Today were learning about html 
-    <!--About html-->
-    Html stands for hypertext markup language
+  <div class="page">
+    <h1>Instructions</h1>
+
+    <ol class="instructions">
+      <li>
+        <span class="step-title">Step 1: Open the Starter Code</span>
+        Open the starter code from Getting Started and run it. Click the Check Countdown button. The four boxes still show "(Part ... fills this)" because the JavaScript parts are empty. Now you will fill them, one part at a time. Click the button after each part to test it.
+      </li>
+      <li>
+        <span class="step-title">Step 2: Part 1 - Use Null and Undefined</span>
+        In Part 1, make a variable called giftIdea and give it the value null. This means "empty on purpose". Then make a variable called cakeFlavor and do not give it any value. This is undefined. Join both into one text with +, put &lt;br&gt; between them, and show it in the Missing Details box with document.getElementById("missing").innerHTML.
+      </li>
+      <li>
+        <span class="step-title">Step 3: Part 2 - Greet by Time of Day</span>
+        In Part 2, get the hour with new Date().getHours(). It is a number from 0 to 23. Use if for "before 12" (morning), else if for "before 17" (afternoon) and else for the evening. Join the greeting and a friendName with +. Show it in the Greeting box with document.getElementById("greeting").innerHTML.
+      </li>
+      <li>
+        <span class="step-title">Step 4: Part 3 - Show the Days-Left Message</span>
+        In Part 3, use == to compare daysLeft with 0 and then with 1. If it is 0, the message is "Today is the party!". If it is 1, the message is "Tomorrow is the party!". Otherwise, join daysLeft and the words " days to go until the party!". Show it in the Days Left box with document.getElementById("daysLeft").innerHTML.
+      </li>
+      <li>
+        <span class="step-title">Step 5: Part 4 - Count Down with a while Loop</span>
+        In Part 4, make a counter called day that starts at daysLeft. Use a while loop that keeps going while day is 1 or more. Inside the loop, add the text "Days left: " and the counter to your countdown text, with &lt;br&gt; at the end. Use day-- so the counter goes down and the loop stops. After the loop, add "Party time!". Show it in the Countdown box with document.getElementById("countdown").innerHTML.
+      </li>
+      <li>
+        <span class="step-title">Step 6: Run and Test</span>
+        Click the button. Check all four boxes. Then change daysLeft to 1 and click again, and then change it to 0 and click again. The Days Left message and the Countdown should change each time.
+      </li>
+    </ol>
+
+    <div class="app">
+      <div id="missing" class="box"><strong>Missing Details</strong></div>
+      <div id="greeting" class="box"><strong>Greeting</strong></div>
+      <div id="daysLeft" class="box"><strong>Days Left</strong></div>
+      <div id="countdown" class="box"><strong>Countdown</strong></div>
+      <button id="checkButton" type="button">Check Countdown</button>
+    </div>
+  </div>
+
+  <script>
+    const button = document.getElementById('checkButton');
+
+    button.addEventListener('click', () => {
+      let giftIdea = null;
+      let cakeFlavor;
+      let missingText = giftIdea + '<br>' + cakeFlavor;
+      document.getElementById('missing').innerHTML = missingText;
+
+      const hour = new Date().getHours();
+      let timeOfDay;
+      if (hour < 12) {
+        timeOfDay = 'morning';
+      } else if (hour < 17) {
+        timeOfDay = 'afternoon';
+      } else {
+        timeOfDay = 'evening';
+      }
+
+      const friendName = 'Sam';
+      const greetingText = 'Good ' + timeOfDay + ' ' + friendName + '!';
+      document.getElementById('greeting').innerHTML = greetingText;
+
+      let daysLeft = 3;
+      let daysLeftText = '';
+      if (daysLeft == 0) {
+        daysLeftText = 'Today is the party!';
+      } else if (daysLeft == 1) {
+        daysLeftText = 'Tomorrow is the party!';
+      } else {
+        daysLeftText = daysLeft + ' days to go until the party!';
+      }
+      document.getElementById('daysLeft').innerHTML = daysLeftText;
+
+      let day = daysLeft;
+      let countdownText = '';
+      while (day >= 1) {
+        countdownText += 'Days left: ' + day + '<br>';
+        day--;
+      }
+      countdownText += 'Party time!';
+      document.getElementById('countdown').innerHTML = countdownText;
+    });
+  </script>
 </body>
 </html>
