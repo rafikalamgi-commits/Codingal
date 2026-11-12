@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #40da19, #1ee4e4);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        p {
+            color: rgb(3, 164, 212);
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            display: inline-block;
+            background: linear-gradient(to right, #16e7e7, #0c5bc4);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            box-sizing: border-box;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 15px;
+            background-color: #4CAF50;
+            color: rgb(8, 103, 212);
+            transition: background-color linear-gradient(to bottom, gray, green) 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Planet Cards</h1>
+    <p>Use JS to build my planet cards!</p>
+    <button id="btn" onclick="showPlanets()">Show Planets</button>
+    <div id="container">
+        <div id="card1" class="card"></div>
+        <div id="card2" class="card"></div>
+        <div id="card3" class="card"></div>
+    </div>
+
+    <script>
+        class Planet {
+            constructor(name, fact) {
+                this.name = name;
+                this.fact = fact;
+            }
+
+            describe() {
+                return this.name + " " + this.fact;
+            }
+        }
+
+        function showPlanets() {
+            const p1 = new Planet("Earth", "is the only known planet with life.");
+            const p2 = new Planet("Mars", "is called the Red Planet.");
+            const p3 = new Planet("Saturn", "has beautiful rings around it.");
+
+            document.getElementById("card1").innerHTML = p1.describe();
+            document.getElementById("card2").innerHTML = p2.describe();
+            document.getElementById("card3").innerHTML = p3.describe();
+        }
+    </script>
+</body>
+</html>
