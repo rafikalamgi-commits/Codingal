@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Magic Word Lab</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        h1 {
+            color: rgb(0, 195, 255);
+        }
+
+        h3 {
+            color: rgb(12, 195, 255);
+        }
+
+        .box {
+            background: white;
+            color: rgb(62, 228, 12);
+            min-height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container py-4">
+        <h1 class="mb-1">My Magic Word Lab</h1>
+        <p class="text-muted mb-4">Welcome to the Magic Word Lab!</p>
+
+        <section class="card p-3 mb-4 shadow-sm">
+            <h3>What type is it???</h3>
+            <div>
+                <button class="btn btn-warning" type="button" onclick="checkTypes()">Reveal the Types!</button>
+            </div>
+            <div id="typeResult" class="box p-3 mt-3 rounded" aria-live="polite"></div>
+        </section>
+
+        <section class="card p-3 mb-4 shadow-sm">
+            <h3>Switch the Type</h3>
+            <label for="numIn">Type any number here (try: 42)</label>
+            <input id="numIn" class="form-control mb-2" type="text" placeholder="Type any number here (try: 42)">
+            <div>
+                <button class="btn btn-primary mr-2" type="button" onclick="toStr()">Turn into Text</button>
+                <button class="btn btn-secondary" type="button" onclick="toNum()">Turn into Number</button>
+            </div>
+            <div id="convResult" class="box p-3 mt-3 rounded" aria-live="polite"></div>
+        </section>
+
+        <section class="card p-3 mb-4 shadow-sm">
+            <h3>Find and Swap a Word</h3>
+            <p id="sentence">The dragon guards the castle.</p>
+            <label for="findW">Word to find</label>
+            <input id="findW" class="form-control mb-2" type="text" placeholder="Word to find (try: dragon)">
+            <label for="swapW">Swap with</label>
+            <input id="swapW" class="form-control mb-2" type="text" placeholder="Swap with (try: wizard)">
+            <div>
+                <button class="btn btn-info mr-2" type="button" onclick="doSearch()">Find It!</button>
+                <button class="btn btn-success" type="button" onclick="doReplace()">Swap It!</button>
+            </div>
+            <div id="srResult" class="box p-3 mt-3 rounded" aria-live="polite"></div>
+        </section>
+
+        <section class="card p-3 mb-4 shadow-sm">
+            <h3>Catch the Mistake</h3>
+            <label for="divIn">Enter a number to divide 10 by</label>
+            <input id="divIn" class="form-control mb-2" type="text" placeholder="Try a number, 0, or some text">
+            <button class="btn btn-danger" type="button" onclick="trySafe()">Try It!</button>
+            <div id="errResult" class="box p-3 mt-3 rounded" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script>
+        const sen = "The dragon guards the castle.";
+
+        function checkTypes() {
+            const numberValue = 42;
+            const nameValue = "Reyan";
+            const booleanValue = true;
+            document.getElementById("typeResult").textContent =
+                "42 is a " + typeof numberValue + ", Alex is a " + typeof nameValue +
+                ", and true is a " + typeof booleanValue + ".";
+        }
+
+        function toStr() {
+            const value = document.getElementById("numIn").value;
+            document.getElementById("convResult").textContent =
+                "Text: \"" + String(value) + "\" (type: " + typeof String(value) + ")";
+        }
+
+        function toNum() {
+            const value = Number(document.getElementById("numIn").value);
+            document.getElementById("convResult").textContent = Number.isNaN(value)
+                ? "That input cannot be converted to a number."
+                : "Number: " + value + " (type: " + typeof value + ")";
+        }
+
+        function doSearch() {
+            const word = document.getElementById("findW").value;
+            const position = sen.search(word);
+            document.getElementById("srResult").textContent = position === -1
+                ? "\"" + word + "\" was not found in: " + sen
+                : "\"" + word + "\" was found at position " + position + " in: " + sen;
+        }
+
+         function doReplace() {
+                const word = document.getElementById("findW").value;
+                const replacement = document.getElementById("swapW").value;
+                document.getElementById("srResult").textContent =
+                    "Starting sentence: " + sen + " Swapped sentence: " + sen.replace(word, replacement);
+            }
+
+            function trySafe() {
+                const divisor = Number(document.getElementById("divIn").value);
+                const result = document.getElementById("errResult");
+
+                try {
+                    if (!Number.isFinite(divisor) || divisor === 0) {
+                        throw new Error("Please enter a valid number other than 0.");
+                    }
+                    result.textContent = "10 divided by " + divisor + " is " + (10 / divisor) + ".";
+                } catch (error) {
+                    result.textContent = "Caught a mistake: " + error.message;
+                }
+            }
+        </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script>
+</body>
+</html>
